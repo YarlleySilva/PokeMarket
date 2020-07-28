@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import logoImg from "../../assets/pokemarket.png";
 
 import './styles.scss';
 
@@ -8,9 +9,9 @@ const Header = ({ handleOpenCart }) => {
     <header>
       <div className="header-content">
 
-        <h1>PokeMarket</h1>
+        <img src={logoImg} alt="PokeMarket" />
         <div className="header_icons">
-          <FaSearch />
+          <FaSearch className="lupa" />
           <FaShoppingCart onClick={handleOpenCart} />
         </div>
 

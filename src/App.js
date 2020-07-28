@@ -1,14 +1,15 @@
 import React from 'react';
 import Routes from "./routes";
 import { BrowserRouter } from "react-router-dom";
+import Notifications from "react-notify-toast";
 
-// import { Container } from './styles';
 import './app.scss';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes />
+      <Notifications />
     </BrowserRouter>
   );
 }

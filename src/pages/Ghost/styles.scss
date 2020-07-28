@@ -1,19 +1,66 @@
+$breakpoint-MS: "(max-width: 320px)"; /* Em dispositivos Mobile até 320px ou menos */
+$breakpoint-MM: "(max-width: 376px)"; /* Em dispositivos Mobile até 376px ou menos */
+$breakpoint-ML: "(max-width: 425px)"; /* Em dispositivos Mobile até 426px ou menos */
+$breakpoint-TB: "(min-width: 768px)"; /* Em dispositivos Tablet até 768px ou mais */
+$breakpoint-LP: "(min-width: 1024px)"; /* Em dispositivos Notebook até 1024px ou mais */
+$breakpoint-LL: "(min-width: 1025px)"; /* Em dispositivos Notebook até 1440px ou mais */
+
+
 .container {
 
   .grid-cards {
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: ". . . ." ". . . ." ". . . .";
+
+    @media #{$breakpoint-ML}{
+
+      grid-template-columns: 1fr;
+      grid-template-areas: "." "." ".";
+    }
+
+    @media #{$breakpoint-TB}{
+
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: ". ." ". ." ". .";
+    }
+
+    @media #{$breakpoint-LP}{
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: ". . ." ". . ." ". . .";
+    }
+
+    @media #{$breakpoint-LL}{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: ". . . ." ". . . ." ". . . .";
+    }
   }
   
   input {
+    width: 220px;
     position: absolute;
     top: 13px;
-    right: 150px;
+    right: 200px;
     border: 0;
     border-radius: 4px;
     padding: 0 20px;
     height: 35px;
+
+    @media #{$breakpoint-MM}{
+      width: 110px;
+      right: 80px;
+    }
+
+    @media (min-width: 425px){ ////aqui
+      width: 165px;
+      right: 80px;
+    }
+
+    @media (min-width: 550px){
+      width: 165px;
+      right: 150px;
+    }
   }
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import api from "../../services/api";
+import { notify } from "react-notify-toast";
 
+import "./styles.scss";
 
 import Header from "../../components/Header";
 import CardBox from "../../components/CardBox";
 import Cart from "../../components/CartPokemon";
-
-import './styles.scss';
 
 const Ghost = () => {
 
@@ -47,9 +47,9 @@ const Ghost = () => {
     });
 
     setListCartPokemon([...newListCartPokemon, Pokemon]);
+    const myColor = { background: '#0E1717', text: "#FFFFFF" };
+    notify.show("Adicionado no Carrinho!", "success", 1000, myColor);
   }
-
-  console.log(listCartPokemon);
 
   //Abre o Carrinho
   const handleOpenCart = () => {

@@ -1,0 +1,25 @@
+.home {
+
+  display: flex;
+  flex-direction: column;
+
+  .page-ghost {
+    background: url("../../assets/typeGhost.jpg");
+    background-size: cover; 
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-dragon {
+    background: url("../../assets/typeDragon.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

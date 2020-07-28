@@ -1,26 +1,25 @@
 import React, { useMemo } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
-import { FaPlus, FaMinus } from "react-icons/fa";
-import Swal from "sweetalert";
+import Swal from "sweetalert2";
 import './styles.scss';
 
 const CartPokemon = ({ listCartPokemon, handleCloseCart }) => {
 
-  //abre o modal de compra finalizada
-  const handleFinishCart = () => {
-    Swal({
-      title: "Obrigado por comprar conosco!",
-      icon: 'success',
-      button: "OK"
-    })
-
-    // cleanCart();
-  };
 
   //Apaga o Storage
   // const cleanCart = () => {
   //   localStorage.removeItem("@cartPokemonsGhost");
   // }
+
+  //abre o modal de compra finalizada
+  const handleFinishCart = () => {
+    Swal.fire({
+      title: "Obrigado por comprar.",
+      text: "Volte sempre!",
+      icon: "success",
+    });
+  }
+
 
   //soma total de todos os preços
   const totalCart = useMemo(() => {
@@ -56,13 +55,7 @@ const CartPokemon = ({ listCartPokemon, handleCloseCart }) => {
                 <div className="infoPoke" key={name} >
                   <p className="pokeName">{name}</p>
                   <div className="pokeQuantity">
-                    <button>
-                      <FaPlus />
-                    </button>
-                    <span><b>{quantity}</b></span>
-                    <button>
-                      <FaMinus />
-                    </button>
+                    <span><b>Quantidade: {quantity}</b></span>
                   </div>
 
                   <p className="pokePrice">Total R$: {price}</p>
@@ -81,6 +74,7 @@ const CartPokemon = ({ listCartPokemon, handleCloseCart }) => {
               Finalizar Compra {totalCart}
             </button>
           </div>
+
         </div>
 
       </OutsideClickHandler>
