@@ -1,0 +1,41 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  background-color: green;
+  border-radius: 8px;
+  margin: 10px auto;
+  animation:bounce-in 1s ease-in-out 0s 1 normal;
+
+  @keyframes bounce-in {
+    0%{ opacity: 0; transform: scale(.3); }
+    50%{ opacity: 1; transform: scale(1.0); }
+    70%{ transform: scale(0.9); }
+    100%{ transform: scale(1); }
+  }
+
+
+  .info-card {
+    min-width: 100%;
+    background-color: black;
+    color: #FFF;
+    text-align: center;
+    padding: 5px;
+
+    p {
+      padding: 5px;
+      text-transform: uppercase;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 5px;
+      border-radius: 8px;
+      color: #FFF;
+      background: #0a0a0a;
+      cursor: pointer;
+    }
+  }
+}

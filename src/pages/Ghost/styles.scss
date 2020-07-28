@@ -1,0 +1,19 @@
+.container {
+
+  .grid-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: ". . . ." ". . . ." ". . . .";
+  }
+  
+  input {
+    position: absolute;
+    top: 13px;
+    right: 150px;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 20px;
+    height: 35px;
+  }
+}
